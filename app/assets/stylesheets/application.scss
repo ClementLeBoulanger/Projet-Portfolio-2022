@@ -11,3 +11,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Général
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $main-white ;
+  position: relative;
+}
