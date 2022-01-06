@@ -3,7 +3,7 @@
 <section class="section-1" id="accueil">
   <%= image_tag "headlogo_black.png", class: "head_logo" %>
   <div class="title-content">
-    <h6>Hello, je suis</h6>
+    <h6>Bonjour, je suis</h6>
     <h1>Clément Le Boulanger</h1>
     <%= image_tag "profil.jpg", class: "profil_img" %>
   </div>
@@ -17,7 +17,7 @@
 
 <section class="section-2" id="actu">
   <div class="container shadow">
-    <div class="title border-bottom">
+    <div class="title-bottom">
       <h2><i class="far fa-newspaper"></i><strong> Aux dernières nouvelles ...</strong></h2>
       <p><i class="fas fa-calendar-week"></i> 03/01/2022</p>
     </div>
@@ -35,7 +35,7 @@
 <!-- SECTION 3 :: Projets -->
 
 <section class="section-3" id="projets">
-  <div class="container title-container">
+  <div class="container title-container ">
     <h1 class="title">Mes Projets</h1>
     <h2 class="subtitle">Portfolio</h2>
   </div>
@@ -62,13 +62,51 @@
 
 <section class="section-4" id="github">
   <a href="https://github.com/ClementLeBoulanger" target="_blank"><%= image_tag "GitHub-Mark-Light.png" %></a>
-  <p><%= @repo %> Repositories</p>
-  <p><%= @commit %> Commits</p>
-  <p>1369 Cafés</p>
+  <p><%= @repo %> Dépots</p>
+  <p><%= @commit %> Contributions</p>
+  <p><%= @commit[0].to_i * 3 %> Cafés</p>
 </section>
 
 <!-- SECTION 5 :: Compétences -->
 
-<section class="section-5" id="Compétences">
+<section class="section-5" id="competences">
+  <div class="container title-container">
+    <h1 class="title">Mes Compétences</h1>
+    <h2 class="subtitle">Services</h2>
+  </div>
+  <div class="container skill-container mt-5">
+    <div class="content-skill">
+      <div class="logo-skill">
+        <%= image_tag "ruby-on-rails.png"%>
+      </div>
+      <h2>Backend <strong>Ruby On Rails</strong> & <strong>SQL</strong></h2>
+      <p>Je développe des applications Ruby en utilisant le framework Ruby On Rails. J'utilise PostgreSQL pour les bases de données.</p>
 
+
+    </div>
+    <div class="content-skill">
+      <div class="logo-skill">
+        <%= image_tag "react.png"%>
+        <%= image_tag "symbole-esperluette.png", style: "height: 15px; padding: 0 10px;"%>
+        <%= image_tag "sass.png"%>
+      </div>
+      <h2>Frontend <strong>React</strong> & <strong>Sass</strong></h2>
+      <p>Pour des applications réactives et dynamique, j'utilise Javascript et Sass. Je suis actuellement en plein apprentissage de React.</p>
+
+    </div>
+    <div class="content-skill">
+      <div class="logo-skill">
+        <%= image_tag "git.png", style: "height: 45px;"%>
+        <%= image_tag "symbole-esperluette.png", style: "height: 15px; padding: 0 10px;"%>
+        <%= image_tag "figma.png", style: "height: 45px;"%>
+        <%= image_tag "symbole-esperluette.png", style: "height: 15px; padding: 0 10px;"%>
+        <%= image_tag "vscode.png", style: "height: 45px;"%>
+      </div>
+      <h2>Autres <strong>Git</strong>, <strong>Figma</strong> & <strong>VScode</strong></h2>
+      <p>Le travail en équipe étant indispensable, je maitrise Git et GitHub. J'utilise également Figma et VScode</p>
+    </div>
+  </div>
+  <div class="container link-cv mt-3">
+    <button>Mon CV en PDF</button>
+  </div>
 </section>

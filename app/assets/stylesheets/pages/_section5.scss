@@ -1,7 +1,49 @@
 .section-5 {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient($main-green, $main-white);
+  background-color: $main-green;
   padding-top: 100px;
   padding-bottom: 50px;
+  h1 {
+    color: $main-white;
+  }
+  h2 {
+  color: $main-white;
+  margin-bottom: 20px;
+  }
+  .skill-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 13vh;
+  }
+  .content-skill {
+    width: 31%;
+    min-height: 290px;
+    padding: 20px;
+    border-radius: 8px;
+    //border: 1px rgba($color: $main-yellow, $alpha: 0.4) solid;
+    .logo-skill {
+      height: 64px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    p {
+      color: $main-white;
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+  .link-cv {
+    width: 100%;
+    text-align: center;
+    button {
+      background-color: $main-yellow;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      color: $main-green;
+    }
+  }
 }
