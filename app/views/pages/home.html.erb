@@ -1,4 +1,6 @@
-<section class="section-1">
+<!-- SECTION 1 :: Accueil -->
+
+<section class="section-1" id="accueil">
   <%= image_tag "headlogo_black.png", class: "head_logo" %>
   <div class="title-content">
     <h6>Hello, je suis</h6>
@@ -11,7 +13,9 @@
   </div>
 </section>
 
-<section class="section-2">
+<!-- SECTION 2 :: Actus -->
+
+<section class="section-2" id="actu">
   <div class="container shadow">
     <div class="title border-bottom">
       <h2><i class="far fa-newspaper"></i><strong> Aux dernières nouvelles ...</strong></h2>
@@ -27,6 +31,8 @@
     </div>
   </div>
 </section>
+
+<!-- SECTION 3 :: Projets -->
 
 <section class="section-3" id="projets">
   <div class="container title-container">
@@ -50,4 +56,19 @@
     </div>
     <div class="card shadow"></div>
   </div>
+</section>
+
+<!-- SECTION 4 :: Github -->
+
+<section class="section-4" id="github">
+  <a href="https://github.com/ClementLeBoulanger" target="_blank"><%= image_tag "GitHub-Mark-Light.png" %></a>
+  <p><%= @repo %> Repositories</p>
+  <p><%= @commit %> Commits</p>
+  <p>1369 Cafés</p>
+</section>
+
+<!-- SECTION 5 :: Compétences -->
+
+<section class="section-5" id="Compétences">
+
 </section>
