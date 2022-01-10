@@ -119,9 +119,9 @@
     <h2 class="subtitle">Où suis-je ?</h2>
   </div>
 
-  <div class="content-contact border h-100">
-    <div class="content-formulaire border"></div>
-    <div id='map' class="auto-fill"></div>
+  <div class="content-contact">
+    <div class="content-formulaire"></div>
+    <div id='map'></div>
   </div>
 
 
@@ -138,7 +138,7 @@
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [-1.5846318157682102, 47.18145987199874],
-      zoom: 14
+      zoom: 11
     });
     const marker = new mapboxgl.Marker({
       color: "#1a3f47"
