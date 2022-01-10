@@ -74,7 +74,7 @@
     <h1 class="title">Mes Compétences</h1>
     <h2 class="subtitle">Services</h2>
   </div>
-  <div class="container skill-container mt-5">
+  <div class="container skill-container mt-3">
     <div class="content-skill">
       <div class="logo-skill">
         <%= image_tag "ruby-on-rails.png"%>
@@ -107,6 +107,45 @@
     </div>
   </div>
   <div class="container link-cv mt-3">
-    <button>Mon CV en PDF</button>
+    <%= link_to "Mon CV en PDF", "", class: "link-to-pdf" %>
   </div>
+</section>
+
+<!-- SECTION 6 :: Contacts -->
+
+<section class="section-6" id="contact">
+  <div class="container title-container ">
+    <h1 class="title">Contact</h1>
+    <h2 class="subtitle">Où suis-je ?</h2>
+  </div>
+
+  <div class="content-contact border h-100">
+    <div class="content-formulaire border"></div>
+    <div id='map' class="auto-fill"></div>
+  </div>
+
+
+
+
+
+
+
+
+  <script>
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbWVudDQ0MzQwIiwiYSI6ImNrdm05YnU4eDA4bTMyeGpweXh0eTFpZWwifQ.2lzNsDAemnsf4eL0xMevkQ';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-1.5846318157682102, 47.18145987199874],
+      zoom: 14
+    });
+    const marker = new mapboxgl.Marker({
+      color: "#1a3f47"
+    })
+      .setLngLat([-1.5846318157682102, 47.18145987199874])
+      .setPopup(new mapboxgl.Popup().setHTML("<h3>Clément Le Boulanger</h3>"))
+      .addTo(map);
+  </script>
+
 </section>

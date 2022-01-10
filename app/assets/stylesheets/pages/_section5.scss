@@ -38,12 +38,18 @@
   .link-cv {
     width: 100%;
     text-align: center;
-    button {
+    .link-to-pdf {
       background-color: $main-yellow;
       border: none;
       border-radius: 8px;
       padding: 10px 20px;
       color: $main-green;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background-color: $main-white;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
     }
   }
 }
