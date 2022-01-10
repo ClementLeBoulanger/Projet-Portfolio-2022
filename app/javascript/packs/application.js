@@ -27,4 +27,17 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+      mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbWVudDQ0MzQwIiwiYSI6ImNrdm05YnU4eDA4bTMyeGpweXh0eTFpZWwifQ.2lzNsDAemnsf4eL0xMevkQ';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-1.5846318157682102, 47.18145987199874],
+      zoom: 11
+    });
+    const marker = new mapboxgl.Marker({
+      color: "#1a3f47"
+    })
+      .setLngLat([-1.5846318157682102, 47.18145987199874])
+      .setPopup(new mapboxgl.Popup().setHTML("<h3>Clément Le Boulanger</h3>"))
+      .addTo(map);
 });
