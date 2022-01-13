@@ -20,14 +20,27 @@
     display: flex;
     .content-formulaire {
       width: 50%;
-      height: 73vh;
+      min-height: 73vh;
       form {
         width: 70%;
+        label {
+          color: $main-white;
+        }
+        .btn-submit {
+          padding: 5px 10px;
+          background-color: $main-yellow;
+          color: $main-green;
+          &:hover {
+            background-color: $main-white;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+          }
+        }
       }
     }
     #map {
       width: 50%;
-      height: 73vh;
+      min-height: 73vh;
     }
     .popup {
       background-color: $main-green;

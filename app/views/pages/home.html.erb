@@ -124,12 +124,12 @@
 
       <div class="form-group d-flex m-0 flex-column justify-content-center align-items-center h-75">
       <h2 class="pt-5 pl-4">Me Contacter</h2>
-        <%= simple_form_for @message, :url => '/', :method => 'GET' do |f| %>
-          <%= f.input :name %>
+        <%= simple_form_for @message, :url => '/messages', :method => 'POST' do |f| %>
+          <%= f.input :name, :label => "Nom, Prénom"%>
           <%= f.input :email %>
           <%= f.input :objet %>
           <%= f.input :message %>
-          <%= f.submit %>
+          <%= f.button :submit, 'Envoyer', class: "btn-submit" %>
         <% end %>
       </div>
     </div>
