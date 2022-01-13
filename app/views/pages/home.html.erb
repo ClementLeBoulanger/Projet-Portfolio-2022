@@ -120,7 +120,19 @@
   </div>
 
   <div class="content-contact">
-    <div class="content-formulaire"></div>
+    <div class="content-formulaire">
+
+      <div class="form-group d-flex m-0 flex-column justify-content-center align-items-center h-75">
+      <h2 class="pt-5 pl-4">Me Contacter</h2>
+        <%= simple_form_for @message, :url => '/', :method => 'GET' do |f| %>
+          <%= f.input :name %>
+          <%= f.input :email %>
+          <%= f.input :objet %>
+          <%= f.input :message %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
     <div id='map'></div>
   </div>
 
