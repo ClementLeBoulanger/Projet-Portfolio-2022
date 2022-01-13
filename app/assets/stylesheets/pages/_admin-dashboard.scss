@@ -1,0 +1,26 @@
+.admin-menu {
+  width: 100%;
+  //min-height: 100vh;
+  background-color: $main-green;
+  padding-top: 70px;
+  .nav-link {
+    color: $main-yellow;
+  }
+  .active {
+    background-color: $main-yellow !important;
+  }
+}
+
+.content-admin {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $main-green;
+  padding: 0 5%;
+  .tab-pane {
+    display: none;
+    border: 2px blue solid;
+  }
+  .active {
+    display: block;
+  }
+}

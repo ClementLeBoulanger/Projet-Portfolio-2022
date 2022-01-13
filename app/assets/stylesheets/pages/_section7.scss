@@ -1,0 +1,23 @@
+.section-7 {
+  width: 100%;
+  min-height: 10vh;
+  background-color: $main-black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  p {
+    margin: 0;
+    color: $main-white;
+    font-family: $titles-font;
+    font-size: 24px;
+  }
+  .btn-edit {
+    background-color: $main-yellow;
+    color: $main-green;
+    &:hover {
+      background-color: $main-white;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
