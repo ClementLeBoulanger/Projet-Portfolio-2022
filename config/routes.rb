@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home' do
     get '/' => 'messages#new'
   end
-  resources :messages, only: [:create]
+  resources :messages, only: [:create, :destroy]
   get '/admin' => 'admins#admin'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

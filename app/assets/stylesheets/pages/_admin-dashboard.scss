@@ -18,9 +18,42 @@
   padding: 0 5%;
   .tab-pane {
     display: none;
-    border: 2px blue solid;
   }
   .active {
     display: block;
+  }
+  .card-message {
+    width: 60%;
+    min-height: 17vh;
+    background-color: $main-white;
+    border-radius: 8px;
+    margin-bottom: 40px !important;
+    padding: 15px;
+    .objet {
+      color: $main-yellow;
+      font-weight: bold;
+      margin-bottom: 15px !important;
+      .light {
+        color: $main-black;
+        font-weight: normal;
+      }
+    }
+    .email {
+      color: $main-yellow;
+      font-size: 14px;
+      margin-bottom: 15px !important;
+      .light {
+        color: $main-black;
+        font-weight: normal;
+      }
+    }
+    .message {
+      color: $main-yellow;
+      font-size: 12px;
+      .light {
+        color: $main-black;
+        font-weight: normal;
+      }
+    }
   }
 }
