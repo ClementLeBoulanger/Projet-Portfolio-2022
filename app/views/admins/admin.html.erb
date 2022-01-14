@@ -7,8 +7,22 @@
 </div>
 
 <div class="content-admin">
-  <div class="tab-pane active pb-3 pt-3 grid-card" id="p1">
-    1
+  <div class="tab-pane active pb-3 pt-3 grid-card d-flex flex-column align-items-center" id="p1">
+    <div class="form-article-content mb-5">
+      <%= simple_form_for @article_new, :url => '/article', :method => 'POST' do |f| %>
+        <%= f.input :text, :label => "Ajouter un article"%>
+        <%= f.button :submit, 'Envoyer', class: "btn-submit" %>
+      <% end %>
+    </div>
+
+    <% @articles.reverse.each do |article| %>
+      <div class="card-article container shadow">
+        <div class="title-bottom">
+          <p>Article posté le : <%= article.created_at.strftime('%d-%m-%Y') %></p>
+        </div>
+        <p><i class="fas fa-sticky-note"></i> <%= article.text %></p>
+      </div>
+    <% end %>
   </div>
 
   <div class="tab-pane pb-3 pt-3 grid-card" id="p2">

@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     git_info_commits
     git_info_repos
     @message = Message.new
+    @article = Article.last
   end
 
   private

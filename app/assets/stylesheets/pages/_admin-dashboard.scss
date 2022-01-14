@@ -2,7 +2,9 @@
   width: 100%;
   //min-height: 100vh;
   background-color: $main-green;
-  padding-top: 70px;
+  padding-top: 90px;
+  padding-left: 5%;
+  padding-right: 5%;
   .nav-link {
     color: $main-yellow;
   }
@@ -16,6 +18,31 @@
   min-height: 100vh;
   background-color: $main-green;
   padding: 0 5%;
+  label {
+    color: $main-white;
+  }
+  .btn-submit {
+    padding: 5px 10px;
+    background-color: $main-yellow;
+    color: $main-white;
+    &:hover {
+      background-color: $main-white;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  .form-article-content {
+    width: 65%;
+    margin-bottom: 40px;
+  }
+  .card-article {
+    width: 65%;
+    min-height: 20vh;
+    border-radius: 8px;
+    background-color: $main-white;
+    margin-bottom: 40px;
+    padding: 15px;
+  }
   .tab-pane {
     display: none;
   }
