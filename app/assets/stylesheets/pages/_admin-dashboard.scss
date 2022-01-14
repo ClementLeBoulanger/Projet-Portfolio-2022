@@ -18,6 +18,12 @@
   min-height: 100vh;
   background-color: $main-green;
   padding: 0 5%;
+  .text-field {
+    background-color: $main-white;
+    min-height: 20vh;
+    border-radius: 8px;
+    margin-top: 25px;
+  }
   label {
     color: $main-white;
   }

@@ -7,6 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "trix"
+import "@rails/actiontext"
 
 Rails.start()
 Turbolinks.start()
@@ -41,3 +43,6 @@ document.addEventListener('turbolinks:load', () => {
       .setPopup(new mapboxgl.Popup().setHTML("<h3>Clément Le Boulanger</h3>"))
       .addTo(map);
 });
+
+require("trix")
+require("@rails/actiontext")
