@@ -5,6 +5,9 @@
   padding-top: 90px;
   padding-left: 5%;
   padding-right: 5%;
+  .menu {
+    width: 65%;
+  }
   .nav-link {
     color: $main-yellow;
   }
@@ -18,6 +21,13 @@
   min-height: 100vh;
   background-color: $main-green;
   padding: 0 5%;
+  .title-article {
+    width: 65%;
+    margin-bottom: 20px;
+    h2 {
+      color: $main-white;
+    }
+  }
   .text-field {
     background-color: $main-white;
     min-height: 20vh;
