@@ -1,0 +1,21 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="text-left title-article border-bottom"><h2>Ajouter un article</h2></div>
+  <div class="form-article-content mb-5">
+    <%= simple_form_for @article_new, :url => '/article', :method => 'POST' do |f| %>
+      <%= f.rich_text_area :text, :label => "Ajouter un article", class: "text-field" %>
+      <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4" %>
+    <% end %>
+  </div>
+
+  <div class="text-left title-article border-bottom"><h2>Liste des articles</h2></div>
+  <% @articles.reverse.each do |article| %>
+    <div class="card-article container shadow">
+      <div class="title-bottom">
+        <p>Article posté le : <%= article.created_at.strftime('%d-%m-%Y') %></p>
+      </div>
+      <p><i class="fas fa-sticky-note"></i> <%= article.text %></p>
+      <%= link_to icon('fas', 'trash'), article_path(article),method: :delete, class: "btn btn-sm btn-danger ml-2" %>
+      <%= link_to icon('fas', 'edit'), article_path(article), class: "btn btn-sm btn-success ml-2 text-white" %>
+    </div>
+  <% end %>
+</div>

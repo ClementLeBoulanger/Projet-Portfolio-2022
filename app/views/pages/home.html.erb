@@ -37,21 +37,41 @@
     <h2 class="subtitle">Portfolio</h2>
   </div>
   <div class="container card-container mt-5">
-    <div class="card">
-      <div class="miniature-projet" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dqxbd7xuf/image/upload/v1641414182/IMG_1260_ovugu6.jpg');"></div>
-      <div class="content-projet">
-        <h2>Diamond</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus mollitia assumenda hic earum voluptatem provident optio voluptates sapiente molestiae tenetur, quia possimus a.</p>
+
+    <div class="card shadow">
+      <div class="content-miniature">
+        <%= image_tag "miniature-portfolio.png", class:"miniature"%>
+      </div>
+      <div class="content-info">
+        <h1>Portfolio 2022</h1>
+        <p>Portfolio personnel, codé début 2022. Il regroupe l'ensemble de mes projets et de mes compétences. Il a été developpé en Rails afin d'avoir un Dashboard d'administration. Pour en savoir plus visitez le GitHub.</p>
+        <div class="content-logo d-flex justify-content-around mt-3">
+          <%= image_tag "rails.png", class:"logo"%>
+          <%= image_tag "html.png", class:"logo"%>
+          <%= image_tag "css.png", class:"logo"%>
+          <%= image_tag "js.png", class:"logo"%>
+        </div>
+        <a href="https://github.com/ClementLeBoulanger/Projet-Portfolio-2022" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
       </div>
     </div>
-    <div class="card">
-      <div class="miniature-projet" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('https://res.cloudinary.com/dqxbd7xuf/image/upload/v1641414831/Capture_d_e%CC%81cran_2022-01-05_a%CC%80_21.32.18_iyiu5p.png');"></div>
-      <div class="content-projet">
-        <h2>Portfolio 2022</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus mollitia assumenda hic earum voluptatem provident optio voluptates sapiente molestiae tenetur, quia possimus a.</p>
+
+    <div class="card shadow">
+      <div class="content-miniature">
+        <%= image_tag "miniature-diamond.png", class:"miniature"%>
+      </div>
+      <div class="content-info">
+        <h1>Diamond</h1>
+        <p>Diamond est une PWA développée dans le cadre du projet de fin d'étude du Wagon. Elle a été developpée par une équipe de 4 développeurs en 8 jours. Pour en savoir plus visitez le GitHub.</p>
+        <div class="content-logo d-flex justify-content-around mt-3">
+          <%= image_tag "rails.png", class:"logo"%>
+          <%= image_tag "html.png", class:"logo"%>
+          <%= image_tag "css.png", class:"logo"%>
+          <%= image_tag "js.png", class:"logo"%>
+        </div>
+        <a href="https://github.com/qlourenco/Diamond" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
       </div>
     </div>
-    <div class="card shadow"></div>
+
   </div>
 </section>
 

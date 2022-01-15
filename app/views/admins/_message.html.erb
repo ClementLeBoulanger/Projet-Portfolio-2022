@@ -1,0 +1,20 @@
+<div class="content-messages d-flex flex-column w-1OO align-items-center">
+  <% @messages.reverse.each do | message | %>
+    <div class="card-message shadow">
+      <div class="titre d-flex justify-content-between">
+        <p class="objet m-0">Objet : <span class="light"><%= message.objet %></span></p>
+        <p class="objet m-0"><i class="fas fa-signature"></i>
+          <span class="light">
+            <%= message.name %>, posté le <%= message.created_at.strftime('%d-%m-%Y') %>
+          </span>
+        </p>
+      </div>
+      <p class="email m-0"><i class="fas fa-paper-plane"></i> <span class="light"><%= message.email %></span></p>
+      <p class="message m-0"><i class="fas fa-sticky-note"></i> <span class="light"><%= message.message %></span></p>
+    <div class="content-button mt-4 d-flex justify-content-between">
+      <%= link_to icon('fas', 'reply'), "mailto:#{message.email}", class: "btn btn-sm btn-primary" %>
+      <%= link_to icon('fas', 'trash'), message_path(message),method: :delete, class: "btn btn-sm btn-danger ml-2" %>
+    </div>
+    </div>
+  <% end %>
+</div>

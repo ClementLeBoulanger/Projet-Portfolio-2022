@@ -1,62 +1,17 @@
 <div class="admin-menu d-flex justify-content-center">
-  <div class="menu">
-    <nav class="nav nav-pills pb-3 pt-3 justify-content-start w-100">
-      <a class="nav-item pill nav-link active" href="#p1" data-toggle="tab">Actualités</a>
-      <a class="nav-item pill nav-link" href="#p2" data-toggle="tab">Projets</a>
-      <a class="nav-item pill nav-link" href="#p3" data-toggle="tab">Messages</a>
-    </nav>
-  </div>
+    <%= render 'menu' %>
 </div>
 
 <div class="content-admin">
   <div class="tab-pane active pb-3 pt-3 grid-card " id="p1">
-    <div class="d-flex flex-column align-items-center">
-      <div class="text-left title-article border-bottom"><h2>Ajouter un article</h2></div>
-      <div class="form-article-content mb-5">
-        <%= simple_form_for @article_new, :url => '/article', :method => 'POST' do |f| %>
-          <%= f.rich_text_area :text, :label => "Ajouter un article", class: "text-field" %>
-          <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4" %>
-        <% end %>
-      </div>
-
-      <div class="text-left title-article border-bottom"><h2>Liste des articles</h2></div>
-      <% @articles.reverse.each do |article| %>
-        <div class="card-article container shadow">
-          <div class="title-bottom">
-            <p>Article posté le : <%= article.created_at.strftime('%d-%m-%Y') %></p>
-          </div>
-          <p><i class="fas fa-sticky-note"></i> <%= article.text %></p>
-          <%= link_to icon('fas', 'trash'), article_path(article),method: :delete, class: "btn btn-sm btn-danger ml-2" %>
-          <%= link_to icon('fas', 'edit'), article_path(article), class: "btn btn-sm btn-success ml-2 text-white" %>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'article' %>
   </div>
 
   <div class="tab-pane pb-3 pt-3 grid-card" id="p2">
-    2
+    <%= render 'projet' %>
   </div>
 
   <div class="tab-pane pb-3 pt-3 grid-card" id="p3">
-    <div class="content-messages d-flex flex-column w-1OO align-items-center">
-      <% @messages.reverse.each do | message | %>
-        <div class="card-message shadow">
-          <div class="titre d-flex justify-content-between">
-            <p class="objet m-0">Objet : <span class="light"><%= message.objet %></span></p>
-            <p class="objet m-0"><i class="fas fa-signature"></i>
-              <span class="light">
-                <%= message.name %>, posté le <%= message.created_at.strftime('%d-%m-%Y') %>
-              </span>
-            </p>
-         </div>
-         <p class="email m-0"><i class="fas fa-paper-plane"></i> <span class="light"><%= message.email %></span></p>
-         <p class="message m-0"><i class="fas fa-sticky-note"></i> <span class="light"><%= message.message %></span></p>
-        <div class="content-button mt-4 d-flex justify-content-between">
-          <%= link_to icon('fas', 'reply'), "mailto:#{message.email}", class: "btn btn-sm btn-primary" %>
-          <%= link_to icon('fas', 'trash'), message_path(message),method: :delete, class: "btn btn-sm btn-danger ml-2" %>
-        </div>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'message' %>
   </div>
 </div>
