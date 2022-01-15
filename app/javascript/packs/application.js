@@ -41,3 +41,6 @@ document.addEventListener('turbolinks:load', () => {
       .setPopup(new mapboxgl.Popup().setHTML("<h3>Clément Le Boulanger</h3>"))
       .addTo(map);
 });
+
+require("trix")
+require("@rails/actiontext")
