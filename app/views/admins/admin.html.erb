@@ -7,11 +7,11 @@
 </div>
 
 <div class="content-admin">
-  <div class="tab-pane active pb-3 pt-3 grid-card" id="p1">
+  <div class="tab-pane active pb-3 pt-3 grid-card " id="p1">
     <div class="d-flex flex-column align-items-center">
       <div class="form-article-content mb-5">
         <%= simple_form_for @article_new, :url => '/article', :method => 'POST' do |f| %>
-          <%= f.rich_text_area :text, :label => "Ajouter un article"%>
+          <%= f.rich_text_area :text, :label => "Ajouter un article", class: "text-field" %>
           <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4" %>
         <% end %>
       </div>
