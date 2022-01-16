@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   end
   resources :messages, only: [ :create, :destroy ]
   resources :article, only: [ :create, :destroy ]
-  get '/admin' => 'admins#admin'
+  get '/admin' => 'admins#admin' do
+    get '/admin' => 'projet#new'
+  end
+  resources :projets, only: [ :create, :destroy ]
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

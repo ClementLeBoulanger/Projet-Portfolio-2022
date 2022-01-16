@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     git_info_repos
     @message = Message.new
     @article = Article.last
+    @projets = Projet.all
   end
 
   private

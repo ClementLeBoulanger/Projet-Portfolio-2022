@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2022_01_15_153755) do
+ActiveRecord::Schema.define(version: 2022_01_16_193857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +66,23 @@ ActiveRecord::Schema.define(version: 2022_01_15_153755) do
     t.text "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "projets", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "github"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "rails", default: false
+    t.boolean "php", default: false
+    t.boolean "react", default: false
+    t.boolean "html", default: false
+    t.boolean "sass", default: false
+    t.boolean "css", default: false
+    t.boolean "javascript", default: false
+    t.boolean "postgresql", default: false
+    t.boolean "mysql", default: false
   end
 
   create_table "users", force: :cascade do |t|

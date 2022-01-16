@@ -1,3 +1,7 @@
+<!-- NAVBAR -->
+
+<%= render 'shared/navbar' %>
+
 <!-- SECTION 1 :: Accueil -->
 
 <section class="section-1" id="accueil">
@@ -37,60 +41,29 @@
     <h2 class="subtitle">Portfolio</h2>
   </div>
   <div class="container card-container mt-5">
-
-    <div class="card shadow">
-      <div class="content-miniature">
-        <%= image_tag "miniature-portfolio.png", class:"miniature"%>
-      </div>
-      <div class="content-info">
-        <h1>Portfolio 2022</h1>
-        <p>Portfolio personnel, codé début 2022. Il regroupe l'ensemble de mes projets et de mes compétences. Il a été developpé en Rails afin d'avoir un Dashboard d'administration. Pour en savoir plus visitez le GitHub.</p>
-        <div class="content-logo d-flex justify-content-around mt-3">
-          <%= image_tag "rails.png", class:"logo"%>
-          <%= image_tag "html.png", class:"logo"%>
-          <%= image_tag "sass.png", class:"logo"%>
-          <%= image_tag "js.png", class:"logo"%>
-          <%= image_tag "postgresql.png", class:"logo"%>
+    <% @projets.reverse.each do |projet| %>
+      <div class="card shadow">
+        <div class="content-miniature">
+          <%= cl_image_tag projet.photo.key %>
         </div>
-        <a href="https://github.com/ClementLeBoulanger/Projet-Portfolio-2022" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
-      </div>
-    </div>
-
-    <div class="card shadow">
-      <div class="content-miniature">
-        <%= image_tag "miniature-daily-share-post.png", class:"miniature"%>
-      </div>
-      <div class="content-info">
-        <h1>Daily Share List</h1>
-        <p>Daily Share List est une application développée lors de la certification de Concepteur Développeur d'application Web. Cette application est le résultat de 8h de développement. Pour en savoir plus visitez le GitHub.</p>
-        <div class="content-logo d-flex justify-content-around mt-3">
-          <%= image_tag "rails.png", class:"logo"%>
-          <%= image_tag "html.png", class:"logo"%>
-          <%= image_tag "sass.png", class:"logo"%>
-          <%= image_tag "postgresql.png", class:"logo"%>
+        <div class="content-info">
+          <h1><%= projet.title %></h1>
+          <p><%= projet.description %></p>
+          <div class="content-logo d-flex justify-content-around mt-3">
+            <% if projet.rails %><%= image_tag "rails.png", class:"logo"%><% end %>
+            <% if projet.php %><%= image_tag "php.png", class:"logo"%><% end %>
+            <% if projet.react %><%= image_tag "react.png", class:"logo"%><% end %>
+            <% if projet.html %><%= image_tag "html.png", class:"logo"%><% end %>
+            <% if projet.sass %><%= image_tag "sass.png", class:"logo"%><% end %>
+            <% if projet.css %><%= image_tag "css.png", class:"logo"%><% end %>
+            <% if projet.javascript %><%= image_tag "js.png", class:"logo"%><% end %>
+            <% if projet.postgresql %><%= image_tag "postgresql.png", class:"logo"%><% end %>
+            <% if projet.mysql %><%= image_tag "mysql.png", class:"logo"%><% end %>
+          </div>
+          <a href="<%= projet.github %>" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
         </div>
-        <a href="https://github.com/ClementLeBoulanger/Rails-App-For-Certification" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
       </div>
-    </div>
-
-    <div class="card shadow">
-      <div class="content-miniature">
-        <%= image_tag "miniature-diamond.png", class:"miniature"%>
-      </div>
-      <div class="content-info">
-        <h1>Diamond</h1>
-        <p>Diamond est une PWA développée dans le cadre du projet de fin d'étude du Wagon. Elle a été developpée par une équipe de 4 développeurs en 8 jours. Pour en savoir plus visitez le GitHub.</p>
-        <div class="content-logo d-flex justify-content-around mt-3">
-          <%= image_tag "rails.png", class:"logo"%>
-          <%= image_tag "html.png", class:"logo"%>
-          <%= image_tag "sass.png", class:"logo"%>
-          <%= image_tag "js.png", class:"logo"%>
-          <%= image_tag "postgresql.png", class:"logo"%>
-        </div>
-        <a href="https://github.com/qlourenco/Diamond" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
-      </div>
-    </div>
-
+    <% end %>
   </div>
 </section>
 
@@ -113,7 +86,7 @@
   <div class="container skill-container mt-3">
     <div class="content-skill">
       <div class="logo-skill">
-        <%= image_tag "ruby-on-rails.png"%>
+        <%= image_tag "ruby-on-rails-skill.png"%>
       </div>
       <h2>Backend <strong>Ruby On Rails</strong> & <strong>SQL</strong></h2>
       <p>Je développe des applications Ruby en utilisant le framework Ruby On Rails. J'utilise PostgreSQL pour les bases de données.</p>
@@ -122,9 +95,9 @@
     </div>
     <div class="content-skill">
       <div class="logo-skill">
-        <%= image_tag "react.png"%>
+        <%= image_tag "react-skill.png"%>
         <%= image_tag "symbole-esperluette.png", style: "height: 15px; padding: 0 10px;"%>
-        <%= image_tag "sass.png"%>
+        <%= image_tag "sass-skill.png"%>
       </div>
       <h2>Frontend <strong>React</strong> & <strong>Sass</strong></h2>
       <p>Pour des applications réactives et dynamique, j'utilise Javascript et Sass. Je suis actuellement en plein apprentissage de React.</p>
@@ -132,11 +105,11 @@
     </div>
     <div class="content-skill">
       <div class="logo-skill">
-        <%= image_tag "git.png", style: "height: 45px;"%>
+        <%= image_tag "git-skill.png", style: "height: 45px;"%>
         <%= image_tag "symbole-esperluette.png", style: "height: 15px; padding: 0 10px;"%>
-        <%= image_tag "figma.png", style: "height: 45px;"%>
+        <%= image_tag "figma-skill.png", style: "height: 45px;"%>
         <%= image_tag "symbole-esperluette.png", style: "height: 15px; padding: 0 10px;"%>
-        <%= image_tag "vscode.png", style: "height: 45px;"%>
+        <%= image_tag "vscode-skill.png", style: "height: 45px;"%>
       </div>
       <h2>Autres <strong>Git</strong>, <strong>Figma</strong> & <strong>VScode</strong></h2>
       <p>Le travail en équipe étant indispensable, je maitrise Git et GitHub. J'utilise également Figma et VScode</p>

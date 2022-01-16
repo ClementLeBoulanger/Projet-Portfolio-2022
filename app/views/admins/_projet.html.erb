@@ -1,0 +1,59 @@
+<div class="w-100 d-flex flex-column align-items-center">
+  <div class="w-75">
+    <div class="text-left title-article border-bottom"><h2>Ajouter un projet</h2></div>
+    <%= simple_form_for @projet_new, :url => '/projets', :method => 'POST' do |f| %>
+      <%= f.input :title, label: "Titre du projet", class: "text-field" %>
+      <%= f.input :description, label: "Description du projet", class: "text-field" %>
+      <%= f.input :github, label: "Lien GitHub", class: "text-field" %>
+      <div class="d-flex flex-wrap justify-content-around w-100">
+        <%= f.input :rails, label: "Rails" , as: :boolean %>
+        <%= f.input :php, label: "PHP" , as: :boolean %>
+        <%= f.input :react, label: "React" , as: :boolean %>
+        <%= f.input :html, label: "HTML" , as: :boolean %>
+        <%= f.input :css, label: "CSS" , as: :boolean %>
+        <%= f.input :sass, label: "Sass" , as: :boolean %>
+        <%= f.input :javascript, label: "Javascript" , as: :boolean %>
+        <%= f.input :postgresql, label: "PostgreSql" , as: :boolean %>
+        <%= f.input :mysql, label: "MySql" , as: :boolean %>
+        <%= f.input :photo, as: :file %>
+      </div>
+      <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4" %>
+    <% end %>
+  </div>
+
+  <div class="w-75 mt-5">
+    <div class="text-left title-article border-bottom"><h2>Liste des projets</h2></div>
+      <section class="section-projet" id="projets">
+        <div class="container card-container mt-5">
+          <% @projets.reverse.each do |projet| %>
+            <div class="">
+              <div class="card shadow">
+                <div class="content-miniature">
+                  <%= cl_image_tag projet.photo.key %>
+                </div>
+                <div class="content-info">
+                  <h1><%= projet.title %></h1>
+                  <p><%= projet.description %></p>
+                  <div class="content-logo d-flex justify-content-around mt-3">
+                    <% if projet.rails %><%= image_tag "rails.png", class:"logo"%><% end %>
+                    <% if projet.php %><%= image_tag "php.png", class:"logo"%><% end %>
+                    <% if projet.react %><%= image_tag "react.png", class:"logo"%><% end %>
+                    <% if projet.html %><%= image_tag "html.png", class:"logo"%><% end %>
+                    <% if projet.sass %><%= image_tag "sass.png", class:"logo"%><% end %>
+                    <% if projet.css %><%= image_tag "css.png", class:"logo"%><% end %>
+                    <% if projet.javascript %><%= image_tag "js.png", class:"logo"%><% end %>
+                    <% if projet.postgresql %><%= image_tag "postgresql.png", class:"logo"%><% end %>
+                    <% if projet.mysql %><%= image_tag "mysql.png", class:"logo"%><% end %>
+                  </div>
+                  <a href="<%= projet.github %>" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
+                </div>
+              </div>
+            <%= link_to icon('fas', 'trash'), projet_path(projet),method: :delete, class: "btn btn-sm btn-danger ml-2 mt-2" %>
+            <%= link_to icon('fas', 'edit'), projet_path(projet), class: "btn btn-sm btn-success ml-2 mt-2 text-white" %>
+            </div>
+          <% end %>
+        </div>
+      </section>
+
+  </div>
+</div>
