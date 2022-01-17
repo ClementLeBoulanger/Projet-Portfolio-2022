@@ -4,18 +4,23 @@
   background-color: $main-black;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   p {
     margin: 0;
     color: $main-white;
     font-family: $titles-font;
     font-size: 24px;
   }
-  .btn-edit {
-    background-color: $main-yellow;
-    color: $main-green;
+  a {
+    margin: 0px 10px 0px 10px;
+    border-radius: 50%;
+    img {
+      width: 40px;
+      height: 40px;
+    }
     &:hover {
       background-color: $main-white;
+      border-radius: 50%;
       text-decoration: none;
       transition: all 0.2s ease-in-out;
     }
