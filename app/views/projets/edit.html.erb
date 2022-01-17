@@ -2,7 +2,7 @@
 <%= render 'shared/navbar-edit' %>
 <div class="w-100 d-flex align-items-center justify-content-center">
   <div class="w-75 mt-5 pt-5">
-      <div class="text-left title-article border-bottom"><h2>Edition d'un projet</h2></div>
+      <div class="text-left title-article border-bottom mb-4"><h2>Edition d'un projet</h2></div>
       <%= simple_form_for @projet_edit do |f| %>
         <%= f.input :title, label: "Titre du projet", class: "text-field" %>
         <%= f.input :description, label: "Description du projet", class: "text-field" %>

@@ -15,7 +15,7 @@
       </div>
       <p><i class="fas fa-sticky-note"></i> <%= article.text %></p>
       <%= link_to icon('fas', 'trash'), article_path(article),method: :delete, class: "btn btn-sm btn-danger ml-2" %>
-      <%= link_to icon('fas', 'edit'), article_path(article), class: "btn btn-sm btn-success ml-2 text-white" %>
+      <%= link_to icon('fas', 'edit'), edit_article_path(article), class: "btn btn-sm btn-success ml-2 text-white" %>
     </div>
   <% end %>
 </div>

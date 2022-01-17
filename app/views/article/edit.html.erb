@@ -1,0 +1,11 @@
+
+<%= render 'shared/navbar-edit' %>
+<div class="w-100 d-flex align-items-center justify-content-center">
+  <div class="w-75 mt-5 pt-5">
+      <div class="text-left title-article border-bottom mb-4"><h2>Edition d'un article</h2></div>
+      <%= simple_form_for @article do |f| %>
+      <%= f.rich_text_area :text, :label => "Ajouter un article", class: "text-field" %>
+      <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4" %>
+      <% end %>
+    </div>
+</div>
