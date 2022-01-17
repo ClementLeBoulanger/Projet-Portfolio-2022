@@ -11,6 +11,16 @@ class ProjetsController < ApplicationController
     redirect_to admin_path
   end
 
+  def edit
+    @projet_edit = Projet.find(params[:id])
+  end
+
+  def update
+    @projet_update = Projet.find(params[:id])
+    @projet_update.update(projet_params)
+    redirect_to admin_path
+  end
+
   private
 
   def projet_params

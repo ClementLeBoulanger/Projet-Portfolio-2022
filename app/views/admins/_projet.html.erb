@@ -5,6 +5,7 @@
       <%= f.input :title, label: "Titre du projet", class: "text-field" %>
       <%= f.input :description, label: "Description du projet", class: "text-field" %>
       <%= f.input :github, label: "Lien GitHub", class: "text-field" %>
+      <label>Langages</label>
       <div class="d-flex flex-wrap justify-content-around w-100">
         <%= f.input :rails, label: "Rails" , as: :boolean %>
         <%= f.input :php, label: "PHP" , as: :boolean %>
@@ -15,8 +16,8 @@
         <%= f.input :javascript, label: "Javascript" , as: :boolean %>
         <%= f.input :postgresql, label: "PostgreSql" , as: :boolean %>
         <%= f.input :mysql, label: "MySql" , as: :boolean %>
-        <%= f.input :photo, as: :file %>
       </div>
+      <%= f.input :photo, label: "Ajouter une miniature", as: :file %>
       <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4" %>
     <% end %>
   </div>
@@ -49,7 +50,7 @@
                 </div>
               </div>
             <%= link_to icon('fas', 'trash'), projet_path(projet),method: :delete, class: "btn btn-sm btn-danger ml-2 mt-2" %>
-            <%= link_to icon('fas', 'edit'), projet_path(projet), class: "btn btn-sm btn-success ml-2 mt-2 text-white" %>
+            <%= link_to icon('fas', 'edit'), edit_projet_path(projet), class: "btn btn-sm btn-success ml-2 mt-2 text-white" %>
             </div>
           <% end %>
         </div>
