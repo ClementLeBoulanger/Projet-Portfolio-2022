@@ -4,170 +4,28 @@
 
 <!-- SECTION 1 :: Accueil -->
 
-<section class="section-1" id="accueil">
-  <%= image_tag "headlogo_black.png", class: "head_logo" %>
-  <div class="title-content">
-    <h6>Bonjour, je suis</h6>
-    <h1>Clément Le Boulanger</h1>
-    <%= image_tag "profil.jpg", class: "profil_img" %>
-  </div>
-  <h2>- Développeur Web Full Stack -</h2>
-  <div class="scroll">
-    <div class="bulle"></div>
-  </div>
-</section>
+<%= render 'shared/home/section-1' %>
 
 <!-- SECTION 2 :: Actus -->
 
-<section class="section-2" id="actu">
-  <div class="container shadow">
-    <div class="title-bottom mb-3">
-      <h2><i class="far fa-newspaper"></i><strong> Aux dernières nouvelles ...</strong></h2>
-    </div>
-    <p><%= @article.text %></p>
-    <p><i class="fas fa-calendar-week"></i> <%= @article.created_at.strftime('%d-%m-%Y') %> par Clément.</p>
-  </div>
-</section>
+<%= render 'shared/home/section-2' %>
 
 <!-- SECTION 3 :: Projets -->
 
-<section class="section-3" id="projets">
-  <div class="container title-container ">
-    <h1 class="title">Mes Projets</h1>
-    <h2 class="subtitle">Portfolio</h2>
-  </div>
-  <div class="container card-container mt-5">
-    <% @projets.reverse.each do |projet| %>
-      <div class="card shadow">
-        <div class="content-miniature">
-          <%= cl_image_tag projet.photo.key %>
-        </div>
-        <div class="content-info">
-          <h1><%= projet.title %></h1>
-          <p><%= projet.description %></p>
-          <div class="content-logo d-flex justify-content-around mt-3">
-            <% if projet.rails %><%= image_tag "rails.png", class:"logo"%><% end %>
-            <% if projet.php %><%= image_tag "php.png", class:"logo"%><% end %>
-            <% if projet.react %><%= image_tag "react.png", class:"logo"%><% end %>
-            <% if projet.html %><%= image_tag "html.png", class:"logo"%><% end %>
-            <% if projet.sass %><%= image_tag "sass.png", class:"logo"%><% end %>
-            <% if projet.css %><%= image_tag "css.png", class:"logo"%><% end %>
-            <% if projet.javascript %><%= image_tag "js.png", class:"logo"%><% end %>
-            <% if projet.postgresql %><%= image_tag "postgresql.png", class:"logo"%><% end %>
-            <% if projet.mysql %><%= image_tag "mysql.png", class:"logo"%><% end %>
-          </div>
-          <a href="<%= projet.github %>" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</section>
+<%= render 'shared/home/section-3' %>
 
 <!-- SECTION 4 :: Github -->
 
-<section class="section-4" id="github">
-  <a href="https://github.com/ClementLeBoulanger" target="_blank"><%= image_tag "GitHub-Mark-Light.png" %></a>
-  <p><%= @repo %> Dépots</p>
-  <p><%= @commit %> Contributions</p>
-  <p><%= @commit[0].to_i * 3 %> Cafés</p>
-</section>
+<%= render 'shared/home/section-4' %>
 
 <!-- SECTION 5 :: Compétences -->
 
-<section class="section-5" id="competences">
-  <div class="container title-container">
-    <h1 class="title">Mes Compétences</h1>
-    <h2 class="subtitle">Services</h2>
-  </div>
-  <div class="container skill-container mt-3">
-    <div class="content-skill">
-      <div class="logo-skill">
-        <%= image_tag "ruby-on-rails-skill.png"%>
-      </div>
-      <h2>Backend <strong>Ruby On Rails</strong> & <strong>SQL</strong></h2>
-      <p>Je développe des applications Ruby en utilisant le framework Ruby On Rails. J'utilise PostgreSQL pour les bases de données.</p>
-
-
-    </div>
-    <div class="content-skill">
-      <div class="logo-skill">
-        <%= image_tag "react-skill.png"%>
-        <%= image_tag "symbole-esperluette.png", style: "height: 15px; padding: 0 10px;"%>
-        <%= image_tag "sass-skill.png"%>
-      </div>
-      <h2>Frontend <strong>React</strong> & <strong>Sass</strong></h2>
-      <p>Pour des applications réactives et dynamique, j'utilise Javascript et Sass. Je suis actuellement en plein apprentissage de React.</p>
-
-    </div>
-    <div class="content-skill">
-      <div class="logo-skill">
-        <%= image_tag "git-skill.png", style: "height: 45px;"%>
-        <%= image_tag "symbole-esperluette.png", style: "height: 15px; padding: 0 10px;"%>
-        <%= image_tag "figma-skill.png", style: "height: 45px;"%>
-        <%= image_tag "symbole-esperluette.png", style: "height: 15px; padding: 0 10px;"%>
-        <%= image_tag "vscode-skill.png", style: "height: 45px;"%>
-      </div>
-      <h2>Autres <strong>Git</strong>, <strong>Figma</strong> & <strong>VScode</strong></h2>
-      <p>Le travail en équipe étant indispensable, je maitrise Git et GitHub. J'utilise également Figma et VScode</p>
-    </div>
-  </div>
-  <div class="container link-cv mt-3">
-    <%= link_to "Mon CV en PDF", "/CV_Clement_Le_Boulanger_2021.pdf", class: "link-to-pdf", target: "_blank" %>
-  </div>
-</section>
+<%= render 'shared/home/section-5' %>
 
 <!-- SECTION 6 :: Contacts -->
 
-<section class="section-6" id="contact">
-  <div class="container title-container ">
-    <h1 class="title">Contact</h1>
-    <h2 class="subtitle">Où suis-je ?</h2>
-  </div>
-
-  <div class="content-contact">
-    <div class="content-formulaire">
-
-      <div class="form-group d-flex m-0 flex-column justify-content-center align-items-center h-75">
-      <h2 class="pt-5 pl-4">Me Contacter</h2>
-        <%= simple_form_for @message, :url => '/messages', :method => 'POST' do |f| %>
-          <%= f.input :name, :label => "Nom, Prénom"%>
-          <%= f.input :email %>
-          <%= f.input :objet %>
-          <%= f.input :message %>
-          <%= f.button :submit, 'Envoyer', class: "btn-submit" %>
-        <% end %>
-      </div>
-    </div>
-    <div id='map'></div>
-  </div>
-
-  <script>
-
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbWVudDQ0MzQwIiwiYSI6ImNrdm05YnU4eDA4bTMyeGpweXh0eTFpZWwifQ.2lzNsDAemnsf4eL0xMevkQ';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-1.5846318157682102, 47.18145987199874],
-      zoom: 11
-    });
-    const marker = new mapboxgl.Marker({
-      color: "#1a3f47"
-    })
-      .setLngLat([-1.5846318157682102, 47.18145987199874])
-      .setPopup(new mapboxgl.Popup().setHTML("<h3>Clément Le Boulanger</h3>"))
-      .addTo(map);
-  </script>
-
-</section>
-
+<%= render 'shared/home/section-6' %>
 
 <!-- SECTION 7 :: Footer -->
 
-<section class="section-7 d-flex flex-column" id="footer">
-  <div class="footer-link mt-4">
-    <a href="https://www.linkedin.com/in/cl%C3%A9ment-le-boulanger/"><%= image_tag "linkedin.png", class:"img-reseau"%></a>
-    <a href="https://www.malt.fr/profile/clementleboulanger"><%= image_tag "malt.png", class:"img-reseau"%></a>
-    <a href="https://github.com/ClementLeBoulanger"><%= image_tag "github.png", class:"img-reseau"%></a>
-  </div>
-  <div class="d-flex align-items-center mt-3 mb-2"><p>Design & Développement <span>Clément Le Boulanger</span> - 2022 <%= link_to icon('fas', 'user-cog'), admin_path %></p></div>
-</section>
+<%= render 'shared/footer' %>
