@@ -21,15 +21,11 @@
 
 <section class="section-2" id="actu">
   <div class="container shadow">
-    <div class="title-bottom">
+    <div class="title-bottom mb-3">
       <h2><i class="far fa-newspaper"></i><strong> Aux dernières nouvelles ...</strong></h2>
-      <p><i class="fas fa-calendar-week"></i> <%= @article.created_at.strftime('%d-%m-%Y') %></p>
     </div>
     <p><%= @article.text %></p>
-    <div class="footer border-top">
-      <%= link_to "Lire la suite ... " %>
-      <%= link_to "Toutes les actus" %>
-    </div>
+    <p><i class="fas fa-calendar-week"></i> <%= @article.created_at.strftime('%d-%m-%Y') %> par Clément.</p>
   </div>
 </section>
 
@@ -167,10 +163,11 @@
 
 <!-- SECTION 7 :: Footer -->
 
-<section class="section-7" id="footer">
-  <a href="https://www.linkedin.com/in/cl%C3%A9ment-le-boulanger/"><%= image_tag "linkedin.png", class:"img-reseau"%></a>
-  <a href="https://www.malt.fr/profile/clementleboulanger"><%= image_tag "malt.png", class:"img-reseau"%></a>
-  <a href="https://github.com/ClementLeBoulanger"><%= image_tag "github.png", class:"img-reseau"%></a>
-
-  <%= link_to icon('fas', 'user-cog'), admin_path, class: "btn btn-sm btn-edit" %>
+<section class="section-7 d-flex flex-column" id="footer">
+  <div class="footer-link mt-4">
+    <a href="https://www.linkedin.com/in/cl%C3%A9ment-le-boulanger/"><%= image_tag "linkedin.png", class:"img-reseau"%></a>
+    <a href="https://www.malt.fr/profile/clementleboulanger"><%= image_tag "malt.png", class:"img-reseau"%></a>
+    <a href="https://github.com/ClementLeBoulanger"><%= image_tag "github.png", class:"img-reseau"%></a>
+  </div>
+  <div class="d-flex align-items-center mt-3 mb-2"><p>Design & Développement <span>Clément Le Boulanger</span> - 2022 <%= link_to icon('fas', 'user-cog'), admin_path %></p></div>
 </section>

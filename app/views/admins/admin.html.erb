@@ -1,19 +1,5 @@
-<%= render 'shared/navbar-admin' %>
-
-<div class="admin-menu d-flex justify-content-center">
-    <%= render 'menu' %>
-</div>
-
-<div class="content-admin">
-  <div class="tab-pane active pb-3 pt-3 grid-card " id="p1">
-    <%= render 'article' %>
-  </div>
-
-  <div class="tab-pane pb-3 pt-3 grid-card" id="p2">
-    <%= render 'projet' %>
-  </div>
-
-  <div class="tab-pane pb-3 pt-3 grid-card" id="p3">
-    <%= render 'message' %>
-  </div>
-</div>
+<% if current_user.admin %>
+  <%= render 'shared/admin/admin-true' %>
+<% else %>
+  <%= render 'shared/admin/admin-false' %>
+<% end %>

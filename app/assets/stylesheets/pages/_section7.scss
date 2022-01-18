@@ -8,21 +8,18 @@
   p {
     margin: 0;
     color: $main-white;
-    font-family: $titles-font;
-    font-size: 24px;
+    font-family: $subtitle-font;
+    font-size: 14px;
+    span {
+      color: $main-yellow;
+    }
   }
   a {
-    margin: 0px 10px 0px 10px;
-    border-radius: 50%;
+    margin: 0px 20px 0px 20px;
+    color: $main-white;
     img {
       width: 40px;
       height: 40px;
-    }
-    &:hover {
-      background-color: $main-white;
-      border-radius: 50%;
-      text-decoration: none;
-      transition: all 0.2s ease-in-out;
     }
   }
 }
