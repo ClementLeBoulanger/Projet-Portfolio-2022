@@ -12,12 +12,17 @@
 
 // Your CSS partials
 @import "components/index";
+@import "pages/index";
 
 // Général
 * {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
+}
+
+html {
+  background-color: $main-blue;
 }
 
 body {

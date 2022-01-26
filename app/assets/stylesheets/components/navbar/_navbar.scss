@@ -1,5 +1,7 @@
 .navbar {
   width: 100%;
+  position: fixed;
+  top: 0;
   height: 60px;
   background-color: $main-blue;
   padding: 0px 122px 0px 122px !important;
