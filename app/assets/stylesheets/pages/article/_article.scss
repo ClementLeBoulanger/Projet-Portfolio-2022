@@ -1,0 +1,35 @@
+.article {
+  padding-top: 60px !important;
+  .content-article {
+    height: auto;
+    //background-color: $main-blue;
+  }
+  .article-title {
+    padding-top: 16px !important;
+    padding-left: 24px !important;
+    padding-bottom: 16px !important;
+    i {
+      font-size: 18px;
+      color: $main-white;
+      margin-right: 20px !important;
+    }
+    h3 {
+      font-size: 18px;
+      color: $main-yellow;
+      font-weight: 200;
+      font-family: $montserrat;
+    }
+  }
+  .separate {
+    width: 100%;
+    height: 2px;
+    background-color: $main-dark-blue;
+  }
+  .article {
+    padding: 24px 16px 24px 16px !important;
+    color: $main-white;
+    font-family: $montserrat;
+    font-size: 18px;
+    font-weight: 200;
+  }
+}

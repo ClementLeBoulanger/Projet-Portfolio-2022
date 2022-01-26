@@ -1,0 +1,24 @@
+<div class="projet d-flex flex-column align-items-center" id="projet">
+  <div class="title-projet d-flex flex-column align-items-end w-1OO col-lg-9">
+    <h2>Mes Projets</h2>
+    <h3>Portfolio</h3>
+  </div>
+
+  <div class="content-projet col-lg-10 w-100">
+    <% @projets.reverse.each do |projet| %>
+      <div class="card d-flex flex-column shadow">
+        <div class="card-img">
+          <%= cl_image_tag projet.photo.key, class:"img"%>
+        </div>
+        <div class="card-info">
+          <h4 class="w-100 text-center"><%= projet.title %></h4>
+          <div class="w-100 d-flex justify-content-center"><span class="separate"></span></div>
+          <p class="card-description w-100 text-center"><%= projet.description %></p>
+          <div class="card-link w-1OO text-center">
+            <a href="#">En Savoir plus</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

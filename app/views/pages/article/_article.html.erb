@@ -1,0 +1,15 @@
+<div class="article d-flex aloign-items-center justify-content-center">
+
+  <div class="content-article col-lg-8 col-md-10 col-sm-11">
+
+    <div class="article-title w-100 d-flex align-items-center">
+      <i class="fas fa-paperclip"></i><h3>Aux dernières nouvelles</h3>
+    </div>
+    <div class="separate"></div>
+
+    <div class="article">
+      <p><%= @article.text %></p>
+      <p><i class="fas fa-calendar-week"></i> <%= @article.created_at.strftime('%d-%m-%Y') %> par Clément.</p>
+    </div>
+  </div>
+</div>
