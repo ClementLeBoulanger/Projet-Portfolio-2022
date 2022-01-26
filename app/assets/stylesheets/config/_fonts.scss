@@ -6,11 +6,10 @@ $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // Import Perso
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap');
-
 // Variables Perso
-$titles-font: 'Montserrat Alternates', sans-serif;
-$subtitle-font: 'Flamenco', cursive;
-$text-font: 'Hind', sans-serif;
+$montserrat: 'Montserrat Alternates', sans-serif;
+$flamenco: 'Flamenco', cursive;
+$hind: 'Hind', sans-serif;
