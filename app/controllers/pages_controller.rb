@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     git_info_commits
-
+    git_info_repos
     @message = Message.new
     @article = Article.last
     @projets = Projet.all
@@ -25,5 +25,14 @@ class PagesController < ApplicationController
     end
   end
 
+  def git_info_repos
+    require 'json'
+    require 'open-uri'
 
+    url = 'https://api.github.com/users/ClementLeBoulanger'
+    user_serialized = URI.open(url).read
+    user = JSON.parse(user_serialized)
+
+    @repo = user['public_repos']
+  end
 end
