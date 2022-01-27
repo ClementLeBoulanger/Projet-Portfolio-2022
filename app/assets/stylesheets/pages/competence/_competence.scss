@@ -1,0 +1,52 @@
+.competence {
+  padding-top: 130px !important;
+  padding-bottom: 60px !important;
+  min-height: 100vh;
+  h2 {
+    color: $main-yellow;
+    font-family: $montserrat;
+    font-size: 36px;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 2px;
+  }
+  h3 {
+    color: $main-white;
+    font-family: $flamenco;
+    font-size: 24px;
+    letter-spacing: -2px;
+    font-weight: normal;
+    margin-top: 8px !important;
+  }
+  .content-competence {
+    margin-top: 100px !important;
+    //background-color: $main-white;
+    width: 100%;
+    .card-competence {
+      width: 300px;
+      min-height: 400px;
+      margin-bottom: 30px !important;
+      background-color: $main-blue;
+    }
+    .card-img {
+      padding: 50px 0px !important;
+    }
+    .esperluette {
+      padding: 0px 20px !important;
+    }
+    h4 {
+      color: $main-white;
+      font-family: $montserrat;
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 60px !important;
+    }
+    P {
+      color: $main-white;
+      padding: 0px 39px 39px 39px !important;
+      font-family: $hind;
+      font-size: 16px;
+      font-weight: 100;
+    }
+  }
+}
