@@ -1,0 +1,43 @@
+.contact {
+  padding-top: 130px !important;
+  padding-bottom: 60px !important;
+  min-height: 100vh;
+  h2 {
+    color: $main-yellow;
+    font-family: $montserrat;
+    font-size: 36px;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 2px;
+  }
+  h3 {
+    color: $main-white;
+    font-family: $flamenco;
+    font-size: 24px;
+    letter-spacing: -2px;
+    font-weight: normal;
+    margin-top: 8px !important;
+  }
+  .content-header {
+    background-color: $main-blue;
+    min-height: 10vh;
+    margin-top: 50px !important;
+    padding: 40px !important;
+    color: $main-white;
+    p {
+      padding-top: 20px !important;
+      font-size: 18px;
+      font-family: $hind;
+      font-weight: 100;
+    }
+  }
+  .contact-form {
+    width: 50%;
+    min-height: 40vh;
+    background-color: $main-dark-blue;
+  }
+  .contact-map {
+    width: 50%;
+    min-height: 40vh;
+  }
+}

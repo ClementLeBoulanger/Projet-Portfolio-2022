@@ -21,6 +21,12 @@
       font-weight: 300;
       font-size: 18px;
       letter-spacing: -1px;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: $main-yellow;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
     }
   }
 }

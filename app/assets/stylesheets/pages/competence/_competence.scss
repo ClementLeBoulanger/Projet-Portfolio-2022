@@ -19,7 +19,7 @@
     margin-top: 8px !important;
   }
   .content-competence {
-    margin-top: 100px !important;
+    margin-top: 70px !important;
     //background-color: $main-white;
     width: 100%;
     .card-competence {
@@ -47,6 +47,18 @@
       font-family: $hind;
       font-size: 16px;
       font-weight: 100;
+    }
+  }
+  a {
+    padding: 10px 15px !important;
+    background-color: $main-yellow;
+    color: $main-blue;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: $main-white;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
     }
   }
 }
