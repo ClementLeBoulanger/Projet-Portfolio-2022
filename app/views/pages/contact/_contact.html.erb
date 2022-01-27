@@ -3,17 +3,41 @@
     <h2>Contact</h2>
     <h3>Où suis-je ?</h3>
   </div>
-  <div class="content-header col-lg-10 col-11">
+  <div class="content-header col-lg-10 col-11 shadow">
     <h4>👋 Hey,  Actuellement je suis disponible pour travailler  !</h4>
     <p>Que ce soit pour une mission à long terme (CDI) ou pour des prestations de Freelance,  et quelques soit votre projet, n’hésitez pas à me contacter pour que nous en discutions ensemble  !</p>
   </div>
   <div class="content-contact d-flex col-lg-10">
-    <div class="contact-form">
-
+    <div class="contact-form form-group d-flex m-0 flex-column align-items-center">
+      <h4 class="w-100 text-center">Me Contacter</h4>
+      <%= simple_form_for @message, :url => '/messages', :method => 'POST' do |f| %>
+        <%= f.input :name, :label => "Nom, Prénom"%>
+        <%= f.input :email %>
+        <%= f.input :objet %>
+        <%= f.input :message %>
+        <%= f.button :submit, 'Envoyer', class: "btn-submit" %>
+      <% end %>
     </div>
-    <div class="contact-map border">
+    <div class="contact-map" id='map'>
 
     </div>
 
   </div>
 </div>
+
+  <script>
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbWVudDQ0MzQwIiwiYSI6ImNrdm05YnU4eDA4bTMyeGpweXh0eTFpZWwifQ.2lzNsDAemnsf4eL0xMevkQ';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-1.5846318157682102, 47.18145987199874],
+      zoom: 11
+    });
+    const marker = new mapboxgl.Marker({
+      color: "#1a3f47"
+    })
+      .setLngLat([-1.5846318157682102, 47.18145987199874])
+      .setPopup(new mapboxgl.Popup().setHTML("<h3>Clément Le Boulanger</h3>"))
+      .addTo(map);
+  </script>
