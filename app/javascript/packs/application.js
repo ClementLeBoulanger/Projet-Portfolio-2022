@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "trix"
 import "@rails/actiontext"
+import { burgerBouton } from '../components/burgerMenu'
 
 Rails.start()
 Turbolinks.start()
@@ -29,7 +30,9 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-      mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbWVudDQ0MzQwIiwiYSI6ImNrdm05YnU4eDA4bTMyeGpweXh0eTFpZWwifQ.2lzNsDAemnsf4eL0xMevkQ';
+    burgerBouton();
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2xlbWVudDQ0MzQwIiwiYSI6ImNrdm05YnU4eDA4bTMyeGpweXh0eTFpZWwifQ.2lzNsDAemnsf4eL0xMevkQ';
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
@@ -46,4 +49,3 @@ document.addEventListener('turbolinks:load', () => {
 
 require("trix")
 require("@rails/actiontext")
-

@@ -4,7 +4,7 @@
   top: 0;
   height: 60px;
   background-color: $main-blue;
-  padding: 0px 122px 0px 122px !important;
+  //padding: 0px 122px 0px 122px !important;
   z-index: 100;
   .navbar-title {
     font-family: $montserrat;
@@ -28,5 +28,70 @@
         transition: all 0.2s ease-in-out;
       }
     }
+  }
+  .nav-burger {
+    width: 28px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  .burger-line {
+    width: 28px;
+    height: 2px;
+    opacity: 1;
+    position: absolute;
+    background-color: $main-white;
+    &:nth-child(1) {
+      top: 0px;
+      transition: 0.2s all ease-in-out;
+      transform: translateY(-50%);
+    }
+    &:nth-child(2) {
+      top: 10px;
+      transform: translateY(-50%);
+      transition: 0.2s all ease-in-out;
+    }
+    &:nth-child(3) {
+      top: 20px;
+      transition: 0.2s all ease-in-out;
+      transform: translateY(-50%);
+    }
+  }
+  .nav-menu-burger {
+    position: absolute;
+    display: none;
+    top: 60px;
+    width: 100%;
+    li {
+      width: 100%;
+      background-color: $main-blue;
+      a {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-title {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav-burger {
+    display: flex;
+  }
+  .nav-menu {
+    display: none;
+  }
+}
+
+@media (min-width: 801px) {
+  .nav-burger {
+    display: none;
+  }
+  .nav-menu {
+    display: flex;
   }
 }
