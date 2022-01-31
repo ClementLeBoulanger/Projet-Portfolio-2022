@@ -17,7 +17,7 @@ puts "***********"
 puts "Création des projets"
 puts "***********"
 
-Projet.create(title: 'test', descrition: 'Description test', github: 'Link Github test')
+Projet.create(title: 'test', description: 'Description test', github: 'Link Github test')
 
 puts "***********"
 puts "Création de l'admin"
