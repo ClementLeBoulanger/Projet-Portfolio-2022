@@ -1,0 +1,23 @@
+.edit {
+  width: 100%;
+  min-height: 100vh;
+  label {
+    color: $main-white;
+    margin-top: 15px !important;
+    margin-bottom: 5px !important;
+  }
+  textarea {
+    min-height: 20vh;
+    background-color: $main-white;
+  }
+  trix-editor {
+    background-color: $main-white;
+    padding: 15px !important;
+  }
+  .trix-button-group {
+    background-color: $main-white;
+  }
+  .btn-submit {
+    background-color: $main-yellow;
+  }
+}

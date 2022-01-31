@@ -1,26 +1,14 @@
 
 <%= render 'shared/navbar-edit' %>
-<div class="w-100 d-flex align-items-center justify-content-center">
-  <div class="w-75 mt-5 pt-5">
-      <div class="text-left title-article border-bottom mb-4"><h2>Edition d'un projet</h2></div>
+<div class="edit w-100 h-100 d-flex align-items-center justify-content-center">
+  <div class="w-50 mt-5 pt-5">
+      <div class="text-left title-article border-bottom mb-4 pb-4 text-light"><h2>Edition d'un projet</h2></div>
       <%= simple_form_for @projet_edit do |f| %>
-        <%= f.input :title, label: "Titre du projet", class: "text-field" %>
-        <%= f.input :description, label: "Description du projet", class: "text-field" %>
-        <%= f.input :github, label: "Lien GitHub", class: "text-field" %>
-        <p>Langages</p>
-        <div class="d-flex flex-wrap justify-content-around w-100">
-          <%= f.input :rails, label: "Rails" , as: :boolean %>
-          <%= f.input :php, label: "PHP" , as: :boolean %>
-          <%= f.input :react, label: "React" , as: :boolean %>
-          <%= f.input :html, label: "HTML" , as: :boolean %>
-          <%= f.input :css, label: "CSS" , as: :boolean %>
-          <%= f.input :sass, label: "Sass" , as: :boolean %>
-          <%= f.input :javascript, label: "Javascript" , as: :boolean %>
-          <%= f.input :postgresql, label: "PostgreSql" , as: :boolean %>
-          <%= f.input :mysql, label: "MySql" , as: :boolean %>
-        </div>
+        <%= f.input :title, label: "Titre du projet", class: "text-field text-light" %>
+        <%= f.input :description, label: "Description du projet", class: "text-field text-light" %>
+        <%= f.input :github, label: "Lien GitHub", class: "text-field text-light" %>
         <%= f.input :photo, label: "Ajouter une miniature", as: :file %>
-        <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4" %>
+        <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4 p-2" %>
       <% end %>
     </div>
 </div>
