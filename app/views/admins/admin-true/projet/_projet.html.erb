@@ -25,11 +25,11 @@
           <div class="card-link w-1OO text-center">
             <a href="#">En Savoir plus</a>
           </div>
+          <div class="content-btn w-1OO text-center mt-3">
+            <%= link_to icon('fas', 'trash'), projet_path(projet),method: :delete, class: "btn btn-sm btn-danger mt-2 px-3 py-2" %>
+            <%= link_to icon('fas', 'edit'), edit_projet_path(projet), class: "btn btn-sm btn-success ml-2 mt-2 px-3 py-2 text-white" %>
+          </div>
         </div>
-      <div class="content-btn">
-        <%= link_to icon('fas', 'trash'), projet_path(projet),method: :delete, class: "btn btn-sm btn-danger mt-2 px-3 py-2" %>
-        <%= link_to icon('fas', 'edit'), edit_projet_path(projet), class: "btn btn-sm btn-success ml-2 mt-2 px-3 py-2 text-white" %>
-      </div>
       </div>
     <% end %>
   </div>
