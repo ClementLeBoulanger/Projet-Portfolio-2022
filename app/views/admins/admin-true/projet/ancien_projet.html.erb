@@ -1,0 +1,39 @@
+<div class="d-flex flex-column align-items-center border">
+  <div class="border">
+    <div class="text-left title-article border-bottom pb-3 mb-3"><h2>Ajouter un projet</h2></div>
+    <div class="form-article-content mb-5">
+      <%= simple_form_for @projet_new, :url => '/projets', :method => 'POST' do |f| %>
+        <%= f.input :title, label: "Titre du projet", class: "text-field" %>
+        <%= f.input :description, label: "Description du projet", class: "text-field" %>
+        <%= f.input :github, label: "Lien GitHub", class: "text-field" %>
+        <%= f.input :photo, label: "Ajouter une miniature", as: :file %>
+        <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="w-75 mt-5">
+    <div class="text-left title-article border-bottom pb-3 mb-3"><h2>Liste des projets</h2></div>
+      <section class="section-projet" id="projets">
+        <div class="container card-container mt-5">
+          <% @projets.reverse.each do |projet| %>
+            <div class="">
+              <div class="card shadow">
+                <div class="content-miniature">
+                  <%= cl_image_tag projet.photo.key %>
+                </div>
+                <div class="content-info">
+                  <h1><%= projet.title %></h1>
+                  <p><%= projet.description %></p>
+                  <a href="<%= projet.github %>" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
+                </div>
+              </div>
+            <%= link_to icon('fas', 'trash'), projet_path(projet),method: :delete, class: "btn btn-sm btn-danger ml-2 mt-2" %>
+            <%= link_to icon('fas', 'edit'), edit_projet_path(projet), class: "btn btn-sm btn-success ml-2 mt-2 text-white" %>
+            </div>
+          <% end %>
+        </div>
+      </section>
+
+  </div>
+</div>

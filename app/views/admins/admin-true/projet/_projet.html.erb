@@ -1,0 +1,36 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="text-left title-article border-bottom pb-3 mb-3"><h2>Ajouter un projet</h2></div>
+  <div class="form-article-content mb-5">
+    <%= simple_form_for @projet_new, :url => '/projets', :method => 'POST' do |f| %>
+      <%= f.input :title, label: "Titre du projet", class: "text-field mt-4" %>
+      <%= f.input :description, label: "Description du projet", class: "text-field mt-4" %>
+      <%= f.input :github, label: "Lien GitHub", class: "text-field mt-4" %>
+      <%= f.input :photo, label: "Ajouter une miniature", as: :file %>
+      <%= f.button :submit, 'Envoyer', class: "btn-submit mt-4 p-2" %>
+    <% end %>
+  </div>
+
+  <div class="text-left title-article border-bottom pb-3 mb-3"><h2>Liste des projets</h2></div>
+  <div class="content-projet col-lg-10 w-100">
+    <% @projets.reverse.each do |projet| %>
+      <div class="card d-flex flex-column">
+        <div class="card-img">
+          <div class="over"></div>
+          <%= cl_image_tag projet.photo.key, class:"img"%>
+        </div>
+        <div class="card-info">
+          <h4 class="w-100 text-center"><%= projet.title %></h4>
+          <div class="w-100 d-flex justify-content-center"><span class="separate"></span></div>
+          <p class="card-description w-100 text-center"><%= projet.description %></p>
+          <div class="card-link w-1OO text-center">
+            <a href="#">En Savoir plus</a>
+          </div>
+        </div>
+      <div class="content-btn">
+        <%= link_to icon('fas', 'trash'), projet_path(projet),method: :delete, class: "btn btn-sm btn-danger mt-2 px-3 py-2" %>
+        <%= link_to icon('fas', 'edit'), edit_projet_path(projet), class: "btn btn-sm btn-success ml-2 mt-2 px-3 py-2 text-white" %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
