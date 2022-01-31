@@ -8,11 +8,12 @@
     <div class="separate"></div>
 
     <div class="article">
-      <% @article ?  %>
+      <% if @article %>
         <p><%= @article.text %></p>
         <p><i class="fas fa-calendar-week"></i> <%= @article.created_at.strftime('%d-%m-%Y') ?  %> par Clément.</p>
-      <% : %>
+      <% else %>
         <p>Pas d'article</p>
+      <% end %>
     </div>
   </div>
 </div>
