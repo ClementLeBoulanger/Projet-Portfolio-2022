@@ -1,3 +1,7 @@
-<%= render 'shared/navbar-admin' %>
-
-Vous devez être admin pour accéder au dashboard.
+<div class="admin-false d-flex flex-column align-items-center justify-content-center">
+  <div class="content-admin-false d-flex flex-column align-items-center">
+    <h4>⚠️ Accès non autorisé</h4>
+  </div>
+    <%= link_to "Retour au site", root_path, class:"mt-4 text-light" %>
+    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %>
+</div>
