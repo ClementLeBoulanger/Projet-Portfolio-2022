@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Run seeds !"
+puts "***********"
+puts "Création des articles"
+puts "***********"
+
+Article.create(text: 'Article de test')
+
+puts "***********"
+puts "Création des projets"
+puts "***********"
+
+Projet.create(title: 'test', descrition: 'Description test', github: 'Link Github test')
+
+puts "***********"
+puts "Création de l'admin"
+puts "***********"
+
+User.create(email: 'hello@clement-leboulanger.com', encrypted_password: '22Janvier!')
+
+puts "Seeds are done !"
