@@ -35,17 +35,6 @@
                 <div class="content-info">
                   <h1><%= projet.title %></h1>
                   <p><%= projet.description %></p>
-                  <div class="content-logo d-flex justify-content-around mt-3">
-                    <% if projet.rails %><%= image_tag "rails.png", class:"logo"%><% end %>
-                    <% if projet.php %><%= image_tag "php.png", class:"logo"%><% end %>
-                    <% if projet.react %><%= image_tag "react.png", class:"logo"%><% end %>
-                    <% if projet.html %><%= image_tag "html.png", class:"logo"%><% end %>
-                    <% if projet.sass %><%= image_tag "sass.png", class:"logo"%><% end %>
-                    <% if projet.css %><%= image_tag "css.png", class:"logo"%><% end %>
-                    <% if projet.javascript %><%= image_tag "js.png", class:"logo"%><% end %>
-                    <% if projet.postgresql %><%= image_tag "postgresql.png", class:"logo"%><% end %>
-                    <% if projet.mysql %><%= image_tag "mysql.png", class:"logo"%><% end %>
-                  </div>
                   <a href="<%= projet.github %>" target="_blank" class="link-git"><i class="fab fa-github"></i> Git Hub</a>
                 </div>
               </div>
