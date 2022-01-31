@@ -23,6 +23,6 @@ puts "***********"
 puts "Création de l'admin"
 puts "***********"
 
-User.create(email: 'hello@clement-leboulanger.com', encrypted_password: '22Janvier!')
+User.create(email: 'hello@clement-leboulanger.com', encrypted_password: '22Janvier!', admin: true)
 
 puts "Seeds are done !"
