@@ -5,25 +5,6 @@
   </div>
 
   <div class="content-projet col-lg-10 w-100">
-    <% if @projets %>
-      <% @projets.reverse.each do |projet| %>
-        <div class="card d-flex flex-column shadow">
-          <div class="card-img">
-            <div class="over"></div>
-            <%= cl_image_tag projet.photo.key, class:"img"%>
-          </div>
-          <div class="card-info">
-            <h4 class="w-100 text-center"><%= projet.title %></h4>
-            <div class="w-100 d-flex justify-content-center"><span class="separate"></span></div>
-            <p class="card-description w-100 text-center"><%= projet.description %></p>
-            <div class="card-link w-1OO text-center">
-              <a href="#">En Savoir plus</a>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <p>Pas de projets</p>
-    <% end %>
+
   </div>
 </div>
