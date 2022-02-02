@@ -6,7 +6,7 @@
 
   <div class="content-projet col-lg-10 w-100">
     <% @projets.reverse.each do |projet| %>
-      <div class="card d-flex flex-column shadow">
+      <div class="card d-flex flex-column shadow" data-aos="flip-left" data-aos-duration="1500" data-aos-anchor-placement="top-center">
         <div class="card-img">
           <div class="over"></div>
           <%= cl_image_tag projet.photo.key, class:"img"%>
